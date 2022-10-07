@@ -270,8 +270,48 @@ def load_model(model_path):
         model = pickle.load(f_in)
         f_in.close()
     logging.info(f'Model loaded')
-
     return dv, model
+
+
+'''
+Write a function that computes performance on model slices. I.e. a function that computes the performance metrics when the value of a given feature is held fixed. E.g. for education, it would print out the model metrics for each slice of data that has a particular value for education. You should have one set of outputs for every single unique value in education.
+Complete the stubbed function or write a new one that for a given categorical variable computes the metrics when its value is held fixed.
+Write a script that runs this function (or include it as part of the training script) that iterates through the distinct values in one of the features and prints out the model metrics for each value.
+Output the printout to a file named slice_output.txt.
+
+'''
+def slice_metrics(df, dv, model, cols, feature):
+    '''
+    Computes performance on model slices.
+    '''
+    #get unique values of feature:
+    feature_values = df[feature].unique()
+
+    with open('slice_output.txt', 'w') as f_out:
+        for value in feature_values:
+            #filter df:
+            df_slice = df[df[feature] == value]
+
+            #create test dict:
+            test_dict = df_slice[cols].to_dict(orient='records')
+
+            #transform test dict:
+            X_test = dv.transform(test_dict)
+
+            #predict on test data:
+            y_pred = model.predict_proba(X_test)[:, 1]
+            
+            #calculate roc_auc_score:
+            score = roc_auc_score(df_slice.earn_over_50k, y_pred)
+
+            f_out.write(f'{feature} = {value}: {score}')
+            logging.info(f'{feature} = {value}: {score}')
+        f_out.close() 
+
+
+
+
+
 
 if __name__ == '__main__':
     #load data:
@@ -288,6 +328,9 @@ if __name__ == '__main__':
     y_pred = predict_batch(df_test, dv, model, cols)
     logging.info(f'Score on test data: {roc_auc_score(df_test.earn_over_50k, y_pred)}')
     
+    #compute_metrics on slice feature:
+    slice_metrics(df_test, dv, model, cols, 'education')
+
     #save predictions:
     df_test['earn_over_50k'] = y_pred
     df_test[['earn_over_50k']].to_csv('./data/predictions.csv', index=False)
