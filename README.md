@@ -19,6 +19,7 @@ The project contains:
 ##### API Creation
 * Create a REST API using Flask API
 * Create tests for an API.
+  ![example.png](./images/example.png)
 
 ##### API Deployment
 * Deploy an app to Heroku.
