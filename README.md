@@ -23,7 +23,11 @@ The project contains:
 
 ##### API Deployment
 * Deploy an app to Heroku.
+  ![continuous_deloyment.png.](./images/continuous_deloyment.png)
+  ![api_welcome_message.png](./images/api_welcome_message.png)
 * Query live API.
+  ![live_post.png](./images/live_post.png)
+  
 
 
 
