@@ -7,6 +7,9 @@ name = "pypi"
 pandas = "*"
 numpy = "*"
 scikit-learn = "*"
+fastapi = "*"
+pydantic = "*"
+requests = "*"
 
 [dev-packages]
 
