@@ -10,6 +10,8 @@ scikit-learn = "*"
 fastapi = "*"
 pydantic = "*"
 requests = "*"
+gunicorn = "*"
+uvicorn = "*"
 
 [dev-packages]
 
