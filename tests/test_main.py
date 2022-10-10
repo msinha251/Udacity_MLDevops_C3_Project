@@ -6,7 +6,7 @@ client = TestClient(app)
 def test_read_root():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"message": "Welcome to the Adult Income Prediction API"}
+    assert response.content == b'Welcome to the Adult Income Prediction API'
 
 def test_predict_api():
     data = {
@@ -33,4 +33,3 @@ def test_predict_api_invalid():
     data = {}
     response = client.post("/predict", json=data)
     assert response.status_code == 422
-
