@@ -5,8 +5,15 @@ from ml.data import process_data
 from ml.clean_data import basic_cleaning
 import logging
 from pydantic import BaseModel
+import os
 
 logging.basicConfig(level=logging.INFO)
+
+if "DYNO" in os.environ and os.path.isdir(".dvc"):
+    os.system("dvc config core.no_scm true")
+    if os.system("dvc pull") != 0:
+        exit("dvc pull failed")
+    os.system("rm -r .dvc .apt/usr/lib/dvc")
 
 app = FastAPI()
 
