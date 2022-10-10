@@ -25,12 +25,15 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Get data
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: arn:aws:iam::487118239906:user/mlops-nanodegree-msinha251
+        aws-region: us-east-1
+      
+    - name: setup dvc
       run: |
-        pip install -U dvc[gdrive] pydrive2 
         dvc pull
-      env:
-        GDRIVE_CREDENTIALS_DATA : ${{ secrets.GDRIVE_CREDENTIALS_DATA }}              
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
