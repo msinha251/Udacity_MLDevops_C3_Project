@@ -1,1 +1,16 @@
-education = 11th: 0.8930268595041322education = hs_grad: 0.8643006826179129education = assoc_acdm: 0.8700462120151239education = some_college: 0.8982384710921032education = 10th: 0.8785614849187935education = prof_school: 0.8683553479381443education = 7th_8th: 0.8574596135571745education = bachelors: 0.876353024879641education = masters: 0.8535967741935483education = doctorate: 0.8172142857142857education = 5th_6th: 0.8013774104683196education = assoc_voc: 0.8545888390608888education = 9th: 0.8703007518796992education = 12th: 0.8556618819776713education = 1st_4th: 0.9642857142857142education = preschool: 1.0
+hs_grad: {'precision': 0.6059113300492611, 'recall': 0.36283185840707965, 'fbeta': 0.45387453874538747}
+bachelors: {'precision': 0.7236842105263158, 'recall': 0.744920993227991, 'fbeta': 0.7341490545050056}
+some_college: {'precision': 0.6939655172413793, 'recall': 0.5348837209302325, 'fbeta': 0.6041275797373358}
+10th: {'precision': 0.5, 'recall': 0.2222222222222222, 'fbeta': 0.30769230769230765}
+prof_school: {'precision': 0.8181818181818182, 'recall': 0.9642857142857143, 'fbeta': 0.8852459016393442}
+masters: {'precision': 0.8426395939086294, 'recall': 0.8019323671497585, 'fbeta': 0.8217821782178217}
+doctorate: {'precision': 0.88, 'recall': 0.88, 'fbeta': 0.88}
+1st_4th: {'precision': 1.0, 'recall': 0.0, 'fbeta': 0.0}
+5th_6th: {'precision': 1.0, 'recall': 0.6666666666666666, 'fbeta': 0.8}
+assoc_acdm: {'precision': 0.5263157894736842, 'recall': 0.40816326530612246, 'fbeta': 0.45977011494252873}
+11th: {'precision': 1.0, 'recall': 0.25, 'fbeta': 0.4}
+assoc_voc: {'precision': 0.6888888888888889, 'recall': 0.4246575342465753, 'fbeta': 0.5254237288135594}
+9th: {'precision': 1.0, 'recall': 0.3333333333333333, 'fbeta': 0.5}
+12th: {'precision': 0.5, 'recall': 0.14285714285714285, 'fbeta': 0.22222222222222224}
+preschool: {'precision': 0.0, 'recall': 1.0, 'fbeta': 0.0}
+7th_8th: {'precision': 1.0, 'recall': 0.2222222222222222, 'fbeta': 0.3636363636363636}
