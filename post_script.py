@@ -18,5 +18,5 @@ sample_dict = {     'workclass': 'state_gov',
                 }
 url = "https://udacity-c3-project.herokuapp.com/predict"
 post_response = requests.post(url, json=sample_dict)
-print(post_response.json())
 print(post_response.status_code)
+print(post_response.content)

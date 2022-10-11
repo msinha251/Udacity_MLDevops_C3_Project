@@ -1,0 +1,6 @@
+[core]
+    remote = mlopsprojects.msinha251.s3
+['remote "mlopsprojects.msinha251"']
+    url = gdrive://1FeJkH1wJ-2Q9eYWvmdVNmCI5aKTzqRQQ/udacity-c3-dvcstore
+['remote "mlopsprojects.msinha251.s3"']
+    url = s3://mlops-nanodegree-msinha251/
