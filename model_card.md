@@ -10,8 +10,8 @@ This model predicts whether a person earns over 50k or not based on the census d
 
 ## Training Data
 The data was collected from the 1994 Census database by Ronny Kohavi and Barry Becker (Data Mining and Visualization, Silicon Graphics). 
-Training data is used from <a href='https://github.com/udacity/nd0821-c3-starter-code/blob/master/starter/data/census.csv'> here </a>
-Sample data: 
+Training data is used from <a href='https://github.com/udacity/nd0821-c3-starter-code/blob/master/starter/data/census.csv'> here </a> <br>
+Sample observation: 
 ```
 {   
     'workclass': 'state_gov',
