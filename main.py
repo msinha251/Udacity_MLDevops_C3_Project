@@ -53,6 +53,13 @@ class Data(BaseModel):
             }
         }
 
+@app.on_event("startup")
+async def startup_event():
+    logging.info("Loading model")
+    global model, encoder, lb
+    model, encoder, lb = load_model('./model')
+    logging.info("Model loaded")
+
 
 #welcome message on the root
 @app.get("/")
@@ -80,8 +87,6 @@ def predict(data: Data):
 
     else:
         logging.info("Model inference started")
-        #load model
-        model, encoder, lb = load_model('./model')
 
         #predict
         y_pred = predict_single(data, './model')
